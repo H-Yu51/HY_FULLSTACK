@@ -1,0 +1,16 @@
+{
+  "name": "car-detect",
+  "version": "1.0.0",
+  "description": "- node 项目的搭建         project 开发工具\r       1. 运行在后端 \r             npm 命令集\r          - npm init 初始化命令集\r                 运行后 会得到  package.json\r                    里面存在  scripts  创建 dev: \"index.js\"\r          - npm run dev \r                 运行   node index.js",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "baidu-aip-sdk": "^2.4.6"
+  }
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旋转到你心里syl</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* 给背景设粉 */
+        body{
+            background-color: rgb(245, 219, 219);
+        }
+        /* 旋转的魔方 */
+        .cube{
+            height: 200px;
+            width: 200px;
+            margin: 0 auto;
+            /* 3D  */
+            transform-style: preserve-3d;   
+            /* 动画 名称  时间 次数 */
+            animation: rotate linear 30s infinite;
+        }
+        /* 魔方盒子 属性 */
+        .cube div {
+            display: block;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+        /* 图片大小 */
+        .cube .img {
+            width: 100px;
+            height: 100px;
+        }
+        /* 图片样式 */
+        .cube .front {
+            transform: rotateY(0deg) translateZ(50px);
+        }
+
+        .cube .back {
+            transform: translateZ(-50px) rotateY(180deg);
+        }
+
+        .cube .left {
+            transform: rotateY(-90deg) translateZ(50px);
+        }
+
+        .cube .right {
+            transform: rotateY(90deg) translateZ(50px);
+        }
+
+        .cube .top {
+            transform: rotateX(90deg) translateZ(50px);
+        }
+
+        .cube .bottom {
+            transform: rotateX(-90deg) translateZ(50px);
+        }
+        /*实现动画效果   创建 rotate 动画规则*/
+        @keyframes rotate {                     
+            from {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+            to {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+        @keyframes rotate {                
+            from {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+            to {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+        @keyframes rotate {                   
+            from {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+            to {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+  
+
+    </style>
+</head>
+<body>
+    <div class="cube">
+        <div class="top">
+            <img src="./images/top.jpg" alt="" class="img">
+        </div>
+        <div class="front">
+            <img src="./images/front.jpg" alt="" class="img">
+        </div>
+        <div class="left">
+            <img src="./images/left.jpg" alt="" class="img">
+        </div>
+        <div class="right">
+            <img src="./images/right.jpg" alt="" class="img" >
+        </div>
+        <div class="back">
+            <img src="./images/back.jpg" alt="" class="img">
+        </div>
+        <div class="bottom">
+            <img src="./images/bottom.jpg" alt="" class="img">
+        </div>
+        <div>
+            <embed src="./images/dangnilaole.mp3" type="" hidden="true" autostart="true" loop="true">
+        </div>
+    </div>
+
+
+</body>
+</html>

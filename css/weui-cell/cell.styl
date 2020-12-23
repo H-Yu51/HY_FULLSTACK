@@ -1,0 +1,30 @@
+// .cell
+//     border-top 1px solid red
+//     border-right 1px solid red
+//     width 20px
+//     height 20px
+//     transform: rotate(45deg)
+
+
+.weui-cell
+    padding 16px
+    text-decoration: none
+    position relative
+    display flex
+    .weui-cell__bd
+        flex  1
+
+    .weui-cell__ft
+        padding 22px
+        position relative
+        &::after
+            display  block
+            content ''
+            width 12px
+            height 12px
+            border 1px solid rgba(0,0,0,5)
+            border-bottom none 
+            border-left none 
+            transform rotate(45deg)
+            position absolute
+            top 20px

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// 法一
+        // setTimeout(function(){
+        //     console.log(1);  
+        // },1000);
+        // console.log(2);
+        //如何先输出2 再输出1
+        // 异步  I/O 内存中 -> 硬盘
+// 法二
+        // Promise  许诺 
+        const p1 = new Promise((resolve,reject) => {
+            // 里面适合放费时的操作
+            // setTimeout(() => {
+            //     console.log(1);
+            // },1000)
+            //  fetch 用于用后端发送请求
+            // 去一个土味情话网站，反馈一句情话，  一来一回 为 http本质   费时的东西放在 Promise内部 （包装异步，费时） 传递执行函数
+            // 异步
+
+            //  这个fetch 封装了一个http 一来一去的请求  需要费时间  fetch主要负责去取数据
+            // fetch("http://localhost:8080/user.json")  
+            // .then(data => data.json())
+            // .then(data => {
+            //     // console.log(data);
+            //     // 实现 promise 
+            //     resolve(data)
+            // })
+            console.log(3);
+            resolve(1);
+        })
+
+        p1.then((data) => {
+            console.log(data);
+        })
+        console.log(2);
+    </script>
+</body>
+</html>
