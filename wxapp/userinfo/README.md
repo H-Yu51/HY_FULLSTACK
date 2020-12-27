@@ -10,3 +10,10 @@
 
 - [云开发文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)
 
+
+-  如何学习vant
+  看文档 
+  看官方demo
+
+- user-poseter  头图 
+  图片比例一定要对，不然就会失真模糊

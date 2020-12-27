@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/my/my",
     "pages/index/index",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
@@ -14,6 +15,7 @@
     "pages/im/im",
     "pages/im/room/room",
     "pages/add/add"
+    
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
