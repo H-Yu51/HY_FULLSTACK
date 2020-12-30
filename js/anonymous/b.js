@@ -20,7 +20,6 @@ const attrs = (obj) =>{
     
 }
 
-
 // const attrs = [...Object.getOwnPropertyNames(jsDontKnow), ...Object.getOwnPropertyNames(Book.prototype)];
 // [ 'isbn', 'title', 'author', 'constructor', 'display' ]
 console.log(attrs(jsDontKnow))
