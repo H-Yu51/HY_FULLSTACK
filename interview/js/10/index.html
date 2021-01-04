@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 箭头函数 arguments 未定义  普通函数不会 
+        // const fn = (b) =>{
+        //     console.log(arguments);
+        // }
+        // fn(1,2,3)
+        // function fn2(a) {
+        //     // 内置对象  运行时有
+        //     console.log(arguments);
+        //     console.log(arguments.length,a,arguments[2]);
+        // }
+        // js传参不严格
+        // fn2(1,2,3)
+        const fn = (...args) =>{  //   ...为 es6 的运算符  reset 运算符 
+            console.log(args);
+        } 
+        fn(1,2,3)
+    </script>
+</body>
+</html>

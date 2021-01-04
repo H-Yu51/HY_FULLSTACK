@@ -10,7 +10,9 @@
   stylus  是css 的 超集   可以编译成css
 
   - 省去了 {：；}  高速完成
-
+  - npm i -g stylus
+  - stylus --version
+  - stylus cell.styl
   - stlus -w cell.styl -o cell.css
       写的是stly文件， html 无法显示，
       -o  编译成 cell.css文件
