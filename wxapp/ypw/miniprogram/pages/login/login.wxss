@@ -1,0 +1,4 @@
+/* pages/login/login.wxss */
+.bg-img{
+  background-image: url('https://6879-hy-4gj7u0rv3e48c56e-1304594991.tcb.qcloud.la/QQ%E5%9B%BE%E7%89%8720210108200238.jpg?sign=6312651a3f08c2f6907f9d371f20c331&t=1610107465');
+}
