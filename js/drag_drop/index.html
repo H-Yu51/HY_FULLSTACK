@@ -23,10 +23,11 @@
     border: 1px solid gray;
     color: red;
   }
-
+/* 光标属性 */
   p {
     cursor: pointer;
   }
+  
   .ds {
     background-color:rgba(0,0,0, 0.1);
   }
@@ -52,7 +53,7 @@
   let target = document.getElementById('target'); // drop
   // 事件 刚开始拖拽
   // 红宝书  addEventListener有什么区别？ on+事件名  
-  // addEventListener 级别的事件 
+  // addEventListener  级别的事件 
   // ie  attachEvent
   dragSrc.ondragstart = handle_start;
   // 在拖的过程会一直执行
@@ -65,41 +66,44 @@
   target.ondragleave = handle_leave
   target.ondrop = handle_drop
 
-  function handle_drop(event) {
-    console.log('当前元素在目的地放下时触发-----');
-    event.preventDefault();
-    target.innerHTML = dragSrc.innerText;
-    // target.appendChild(dragSrc);
-  }
-  function handle_over(event) {
-    event.preventDefault();
-    // console.log('over');
-  }
-  function handle_enter(event) {
-    event.preventDefault();
-    // console.log('handle_enter -当元素进入目的地时触发');
-    target.classList.add('hover');
-  }
-  function handle_leave(event) {
-    event.preventDefault();
-    target.classList.remove('hover');
-    // console.log('handle_leave -当元素离开目的地时触发')
-  }
+
 
   function handle_start(e) {
     // console.log('-----');
     // 细分， drag start 事件 
     // 被按 css 去做 
-    dragSrc.classList.add('ds');
+    // classList 获得所有类名列表   事件监听
+    // console.log(dragSrc.classList);//  DOMTokenList ["txt", value: "txt"]
+    dragSrc.classList.add('ds');// 添加类名  表示拖拽开始了
     console.log('开始拖');
   }
-  function handle_drag() {
-    console.log('拖中');
-    dragSrc.classList.remove('ds');
-  }
-  function handle_end() {
-    console.log('放手了');
-  }
+  // function handle_drag() {
+  //   console.log('拖中');
+  //   dragSrc.classList.remove('ds');
+  // }
+  // function handle_end() {
+  //   console.log('放手了');
+  // }
+  // function handle_drop(event) {
+  //   console.log('当前元素在目的地放下时触发-----');
+  //   event.preventDefault();
+  //   target.innerHTML = dragSrc.innerText;
+  //   // target.appendChild(dragSrc);
+  // }
+  // function handle_over(event) {
+  //   event.preventDefault();
+  //   // console.log('over');
+  // }
+  // function handle_enter(event) {
+  //   event.preventDefault();
+  //   // console.log('handle_enter -当元素进入目的地时触发');
+  //   target.classList.add('hover');
+  // }
+  // function handle_leave(event) {
+  //   event.preventDefault();
+  //   target.classList.remove('hover');
+  //   // console.log('handle_leave -当元素离开目的地时触发')
+  // }
   </script>
 </body>
 </html>
