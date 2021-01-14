@@ -27,10 +27,11 @@
   p {
     cursor: pointer;
   }
-  
+  /* 监听事件 */
   .ds {
-    background-color:rgba(0,0,0, 0.1);
+    background-color:rgba(0,0,0, 0.5);
   }
+  /* 进入drop区的样式 */
   #target.hover {
     border: 3px dashed rgb(255, 0, 0);
   }
@@ -42,6 +43,8 @@
     <div class="dragable">
       <div class="txt" id="txt">
         所有的文字都可以拖拽
+        <!-- 第一件事 先给元素添加 draggable
+            第二件事   执行事件  通过css执行 -->
         <p draggable="true">此段文字设置了属性draggable="true"</p>
       </div>
     </div>
@@ -59,7 +62,6 @@
   // 在拖的过程会一直执行
   dragSrc.ondrag = handle_drag;
   dragSrc.ondragend = handle_end;
-
   // drop 元素 添加了监听事件
   target.ondragenter = handle_enter;
   target.ondragover = handle_over
@@ -67,43 +69,48 @@
   target.ondrop = handle_drop
 
 
-
   function handle_start(e) {
     // console.log('-----');
     // 细分， drag start 事件 
     // 被按 css 去做 
-    // classList 获得所有类名列表   事件监听
+    // classList 获得所有类名列表   添加 事件监听  执行的时候可以有 ds的样式
     // console.log(dragSrc.classList);//  DOMTokenList ["txt", value: "txt"]
     dragSrc.classList.add('ds');// 添加类名  表示拖拽开始了
     console.log('开始拖');
   }
-  // function handle_drag() {
-  //   console.log('拖中');
-  //   dragSrc.classList.remove('ds');
-  // }
-  // function handle_end() {
-  //   console.log('放手了');
-  // }
-  // function handle_drop(event) {
-  //   console.log('当前元素在目的地放下时触发-----');
-  //   event.preventDefault();
-  //   target.innerHTML = dragSrc.innerText;
-  //   // target.appendChild(dragSrc);
-  // }
-  // function handle_over(event) {
-  //   event.preventDefault();
-  //   // console.log('over');
-  // }
-  // function handle_enter(event) {
-  //   event.preventDefault();
-  //   // console.log('handle_enter -当元素进入目的地时触发');
-  //   target.classList.add('hover');
-  // }
-  // function handle_leave(event) {
-  //   event.preventDefault();
-  //   target.classList.remove('hover');
-  //   // console.log('handle_leave -当元素离开目的地时触发')
-  // }
+  function handle_drag() {
+    console.log('拖中');
+    // 拖走时 把 ds样式 去除
+    dragSrc.classList.remove('ds');
+  }
+  function handle_end() {
+    console.log('放手了');
+  }
+
+
+  function handle_enter(event) {
+    event.preventDefault();
+    console.log('handle_enter -当元素进入目的地时触发');
+    // 进入时 添加 hover样式  改变边框
+    target.classList.add('hover');
+  }
+  function handle_leave(event) {
+    event.preventDefault();
+    // 离开容器时 去除样式 
+    console.log('handle_leave -当元素离开目的地时触发')
+    target.classList.remove('hover');   
+  }
+   function handle_over(event) {
+    event.preventDefault();
+    // console.log('over');
+  } 
+   function handle_drop(event) {
+    console.log('当前元素在目的地放下时触发-----');
+    event.preventDefault();
+    // 获取内容
+    target.innerHTML = dragSrc.innerText;
+    // target.appendChild(dragSrc); //？？？
+  }
   </script>
 </body>
 </html>

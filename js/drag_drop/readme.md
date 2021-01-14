@@ -4,7 +4,9 @@
 2. 比较复杂的特效
 
 #  github 拖拽上传功能
-
+第一件事 先给元素添加 draggable
+第二件事   执行drag  三个事件  通过css优化用户体验
+第三件事
 
 1. 给拖拽元素  加dragable
    cursor： move
@@ -19,9 +21,8 @@
    - dragend
    
    drop  异步
-   - dragenter   进入
-   border dashed 
-   - dragover 多次
+   - drop   进入
+   - over   在容器上方     执行多次  容器的边框变化 border dashed 
    - leave  离开
 
  4. - 在拖动目标上触发事件 (源元素):
