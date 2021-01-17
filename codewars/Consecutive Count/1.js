@@ -7,7 +7,8 @@ const getConsectiveItems =(items, key) => {
       if(items[i] === key){
         cnt++;
         if(cnt>max) max = cnt;
-      }else{
+      }
+      else{
         cnt = 0;
       }
     }

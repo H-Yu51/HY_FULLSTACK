@@ -21,7 +21,7 @@
    - dragend
    
    drop  异步
-   - drop   进入
+   - enter   进入
    - over   在容器上方     执行多次  容器的边框变化 border dashed 
    - leave  离开
 
