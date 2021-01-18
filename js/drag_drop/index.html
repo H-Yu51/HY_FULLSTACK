@@ -102,10 +102,11 @@
   }
    function handle_over(event) {
     event.preventDefault();
-    // console.log('over');
+    console.log('over');
   } 
    function handle_drop(event) {
     console.log('当前元素在目的地放下时触发-----');
+    //阻止默认行为  浏览器
     event.preventDefault();
     // 获取内容
     target.innerHTML = dragSrc.innerText;

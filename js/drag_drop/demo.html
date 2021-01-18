@@ -12,9 +12,8 @@
     .left {
       width: 300px;
       height: 500px;
-      margin-right: 10px;
       border: 1px solid lightseagreen;
-
+      margin-right: 10px;
       /* background-color: green; */
     }
     .right {
@@ -62,23 +61,46 @@
   let left = document.getElementById('left')
   let target = document.getElementById('right')
   left.addEventListener('dragstart', (event) => {
-    const target = event.target; 
+    // console.log(event);
+    const target = event.target;
+
+    // 在项目拖动的开始事件(ondragstart)的时候，可以对dataTransfer进行设值操作(setData)。
+    // 拖拽， dataTransfer 属性， 等于运输车
+    // 后续用 dataTransfer.getData获取
+    // 在项目拖动结束的时候，可以获取dataTransfer对象里的值。
     event.dataTransfer.setData('Text', target.id)
+    console.log(target.id,'打印id啦');
+    // js 事件有冒泡机制
+    console.log('drag开始拖动啦1');
   })
   target.addEventListener('dragstart', (event) => {
     const target = event.target; 
     event.dataTransfer.setData('Text', target.id)
   })
-
+  left.addEventListener('drag', (event) => {
+    console.log('drag正在拖啦2');
+  })
+  left.addEventListener('dragend', (event) => {
+    console.log('dragend拖动结束啦7');
+  })
+  target.addEventListener('dragenter', (event) => {
+    // event.preventDefault();
+    console.log('dragenter进入区域啦3')
+  })
   target.addEventListener('dragover', (event) => {
     event.preventDefault();
+    console.log('dragover在区域内拖动啦4')
   })
   left.addEventListener('dragover', (event) => {
     event.preventDefault();
   })
-  
+  target.addEventListener('dragleave', (event) => {
+    // event.preventDefault();
+    console.log('dragleave离开拖动区域啦5')
+  })
   target.addEventListener('drop', (event) => {
-    event.preventDefault();
+    // event.preventDefault();
+    console.log('drop释放鼠标啦6')
     let drag_id = event.dataTransfer.getData('text')
     target.appendChild(document.getElementById(drag_id))
   })
