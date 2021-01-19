@@ -1,0 +1,1 @@
+{"version":3,"sources":["src/common.js"],"names":["console","log"],"mappings":"AAAAA,OAAO,CAACC,GAAR,CAAY,SAAZ","file":"common.bec17803.js","sourceRoot":"..","sourcesContent":["console.log('干饭人，干饭魂');"]}

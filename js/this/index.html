@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // this  内存
+        var a = 1; // 在内存中开辟空间 存放变量a 把值赋为1
+        var obj ={ // 内存中开辟空间大 -> map 空间
+            foo: 5,
+            // 函数重新分配一个执行空间进入执行栈  创建作用域
+            func:function(){
+                console.log(this.foo);
+            }
+        }
+        var foo = 6;
+        var func = obj.func;
+        obj.func();
+        func();
+        obj.foo  // .运算 对象属性查找 -> 对地址的不断查找
+    </script>
+</body>
+</html>
