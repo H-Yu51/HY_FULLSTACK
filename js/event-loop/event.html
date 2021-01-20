@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+      // js 单线程  
+  console.log('event-loop'); // 1
+  setTimeout(() => {
+    console.log('setTimeout1'); // 2  轮询
+    Promise.resolve().then(data => {   // Promise
+        console.log(222);
+
+    })
+  }, 0)
+  setTimeout( ()=>{
+      console.log('setTimeout2');
+  },0)
+  Promise.resolve().then( data => {
+      console.log(1111);
+  })
+  console.log('event-loop end'); //3
+  </script>
+</body>
+</html>
