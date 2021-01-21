@@ -31,12 +31,18 @@
      2.  js  处于DOM树 和CSS 渲染树之间  
         js 
 - 优化一
+    // let oContainer = document.getElementById('container')
+
+    // for (var count = 0; count < 10000; count++) {
+    //     oContainer
+    //         .innerHTML += '<span>我是一个小测试</span>';
+    // }
+   
+
+- 优化二
 let oContainer = document.getElementById('container')
 
 for (var count = 0; count < 10000; count++) {
     oContainer
         .innerHTML += '<span>我是一个小测试</span>';
 }
-   
-
-- 优化二
