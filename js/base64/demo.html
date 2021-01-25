@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS启动新的线程</title>
+</head>
+<body>
+    <!-- H5 新特性 js可以多线程 -->
+
+    <script>
+        // h5  新特性有哪些？ 
+        // 把一部分工作交给 worker 线程去做
+        //   耗时间的任务   比如webp转换  给予worker做 
+        let worker = new Worker('work.js');  // 启动一个 worker 线程
+        // 线程中通信  
+        worker.postMessage('Hello World');
+        worker.addEventListener('message',(e) => {  // 消息监听
+            console.log(e);
+        })
+    </script>
+</body>
+</html>
