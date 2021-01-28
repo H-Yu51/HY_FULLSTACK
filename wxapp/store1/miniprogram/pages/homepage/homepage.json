@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "huangyu",
+  "usingComponents": {
+    "my-search": "/components/search/search",
+    "index-swiper": "/components/swiper/swiper"
+  }
+}
