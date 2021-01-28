@@ -1,9 +1,11 @@
 {
   "pages": [
     "pages/homepage/homepage",
+    "pages/detail/detail",
+    
     "pages/cart/cart",
-    "pages/me/me",
-    "components/search/search"
+    "pages/me/me"
+    
   ],
   "window": {
     "backgroundColor": "#F0F0F0",

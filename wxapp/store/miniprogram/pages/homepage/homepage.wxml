@@ -14,33 +14,35 @@
     wx:for="{{typeCat}}"
     wx:key="id"
     >
-    <view data-id="{{item.id}}" class="type-name {{activeTypeId === item.id? 'type-item-on':''}}"
-       bindtap="typeSwitch">
+      <view data-id="{{item.id}}"
+       class="type-name {{activeTypeId === item.id? 'type-item-on':''}}"
+       bindtap="typeSwitch"
+       >
         {{item.name}}
       </view>
     </view>
   </view>
-
   <view class="fruit-container">
-    <block wx:for="{{fruitInfo}}" wx:key="fruit-board">
-      <view class="fruit-item" bindtap="tapToDetail" data-fID="{{item._id}}" wx:if="{{item.onShow}}">
+    <block wx:for="{{fruitInfo}}" wx:key="fruitId">
+      <view class="fruit-item" bindtap="tapToDetail"
+      data-fid="{{item._id}}" wx:if="{{item.onShow}}">
         <view class="fruit-image">
-          <image src="{{item.imgUrl}}" mode="aspectFill"></image>
+          <image src="{{item.imgUrl}}" mode="aspectFill"/>
         </view>
         <view class="fruit-info">
           <view class="line1">
             <text class="name">{{item.name}}</text>
           </view>
           <view class="line2">
-            <text class="price">{{item.price}}</text>
-            <text class="unit">{{item.unit}}</text>
+            <view class="price">
+              <text>${{item.price}}</text>
+              <text class="unit">{{item.unit}}</text>
+            </view>
+            <image src="../../images/icon/cart4.png" mode="aspectFit" 
+            catchtap="addCartByHome" data-fid="{{item._id}}" />
           </view>
-          <image src="../../images/icon/cart4.png" mode="aspectFill" catchtap="addCartByHome" data-_id="{{item._id}}"></image>
-
         </view>
       </view>
     </block>
   </view>
-
-
 </view>
