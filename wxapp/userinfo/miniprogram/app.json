@@ -1,7 +1,8 @@
 {
-  "pages": [
+  "pages": [  
+     "pages/my/my",
     "pages/youzan/youzan",
-    "pages/my/my",
+ 
     "pages/index/index",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",

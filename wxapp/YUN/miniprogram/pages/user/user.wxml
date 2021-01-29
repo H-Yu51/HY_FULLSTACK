@@ -1,0 +1,15 @@
+<!--miniprogram/pages/user/user.wxml-->
+<view>
+  <image class="user-post" src=""></image>
+
+  <view class="user-info"></view>
+
+  <view class="user-order"></view>
+
+  <view class="slide-image"></view>
+
+  <view class="make-money"></view>
+
+  <view class="user-serve"></view>
+
+</view>
