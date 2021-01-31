@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import CommentApp from './CommentApp';
+import CommentApp from './CommentApp'
 
 ReactDOM.render(
   <React.StrictMode>
