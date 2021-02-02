@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 三个ajax 异步请求   要保证执行顺序
+        // 1. callback  回调地狱
+        // 2. Promice  then    （阮一峰）
+        // 3. async_await  异步变同步
+// 第一  回调
+        // function ajax (url, fn){
+        //     let xhr = new XMLHttpRequest();
+        //     xhr.open('GET', url);
+        //     xhr.onreadystatechange = function() {
+        //         if(xhr.readyState === 4 && xhr.status === 200){
+        //             fn(JSON.parse(xhr.responseText))
+        //         }
+        //     }
+        //     xhr.send();
+        // }
+        // ajax('https://api.github.com/users/wesbos', function(result){
+            
+        //     console.log(result,'----------');
+        //     ajax('http://api.react.beer/v2/search?q=hops&type=beer', function(result){
+        //         console.log(result,'||||||||||');
+        //         ajax('https://api.discogs.com/artists/51988',function(result){
+        //             console.log(result,'+++++++++++');
+        //         })
+        //     })
+        // })
+//  第二  生成器函数
+        //假如 一个函数  async （） => {  }    不仅仅执行一次 可以返回多次
+        // Generator function  生成器函数
+        // function* foo(x){   
+        //     console.log('1');
+        //     yield x + 1;  // 关键字  把执行直接返回 并记录执行状态
+        //     console.log('2');
+        //     yield x + 2;
+        //     console.log('3');
+        //     return x + 3;  // over
+        // }
+        // let steps = foo(1);   // 执行器   steps.next() 执行一次  一次调用只能执行一次
+        // // console.log(steps.next());  // 1  value:2,done:false
+        // // console.log(steps.next());  // 2  value:3,done:false
+        // // console.log(steps.next());  // 3  value:4,done:ture
+        // for(let x of steps){
+        //     console.log(x);
+        // }
+        // promise
+        // let p = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         resolve({a:1,b:2})
+        //     },2000)
+        // })
+        // p.then();
+
+        function ajax(url){
+            fetch(url)
+                .then(data=> data.json())
+                .then(data=> dataGen.next(data))
+        }
+        function* steps (){  //生成器函数
+            console.log('fetching beers');
+            const beers = yield ajax('http://api.react.beer/v2/search?q=hops&type=beer');
+            // 停一下
+            console.log(beers);
+            const wes = yield ajax('https://api.github.com/users/wesbos');
+            console.log(wes);
+            const fatJoe = yield ajax('https://api.discogs.com/artists/51988');
+            console.log(fatJoe);
+        } 
+        const dataGen = steps(); // 
+        dataGen.next();
+    </script>
+</body>
+
+</html>
