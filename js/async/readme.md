@@ -5,5 +5,6 @@ setTimeout   setInterval  定时器
 addEventListner  事件监听
 promise  
 fetch  ajax    数据请求
-
+generator 
 callback  回调函数
+async   es7
