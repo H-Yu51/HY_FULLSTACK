@@ -1,0 +1,20 @@
+/* components/search/search.wxss */
+.search-view{
+  margin: auto;
+  width: 700rpx;   
+  height: 65rpx;    
+  display: flex;
+  border: 1px solid red;
+  border-radius: 50px;
+}
+.search-input{ 
+  flex: 6;
+  width: 550rpx;
+  height: 60rpx;
+  padding-top: 10rpx;
+  padding-left: 20rpx;
+}
+.search-btn{
+  flex: 1;
+  background-color: #fff;
+}

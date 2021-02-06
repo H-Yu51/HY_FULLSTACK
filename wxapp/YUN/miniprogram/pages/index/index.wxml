@@ -1,0 +1,15 @@
+<view class="index">
+  <!-- 轮播图 -->
+  <view class="swiper-container">
+    <index-swiper imgUrls="{{imgUrls}}"></index-swiper>
+  </view>
+  <view class="text">
+    <text>官方商城</text>
+    <text>正品保障</text>
+    <text>满99包邮</text>
+  </view>
+  <view class="homepage-select">
+    
+  </view>
+
+</view>

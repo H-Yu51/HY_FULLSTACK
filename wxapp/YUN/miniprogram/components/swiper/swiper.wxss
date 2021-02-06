@@ -1,0 +1,14 @@
+/* components/swiper/swiper.wxss */
+.swiper-container{
+  width: 700rpx;
+  margin: 25rpx auto;
+}
+.swiper_box {
+  width: 100%;
+  height:300rpx;
+}
+.slide-image {
+  width: 100%;
+  height:300rpx;
+  border-radius: 11px;
+}
