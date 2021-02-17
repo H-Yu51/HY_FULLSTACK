@@ -1,4 +1,8 @@
 <view class="index">
+  <!-- 搜索框 -->
+  <view class="search-view">
+    <my-search></my-search>
+  </view>
   <!-- 轮播图 -->
   <view class="swiper-container">
     <index-swiper imgUrls="{{imgUrls}}"></index-swiper>

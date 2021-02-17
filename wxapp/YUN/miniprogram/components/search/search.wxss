@@ -1,20 +1,23 @@
 /* components/search/search.wxss */
+/* 搜索框 */
 .search-view{
-  margin: auto;
-  width: 700rpx;   
-  height: 65rpx;    
-  display: flex;
-  border: 1px solid red;
-  border-radius: 50px;
+    background: #f75206;
+    overflow: hidden;
 }
-.search-input{ 
-  flex: 6;
-  width: 550rpx;
-  height: 60rpx;
-  padding-top: 10rpx;
-  padding-left: 20rpx;
+.search-box{
+  position: relative;
+  background: #fff;
+  margin: 15rpx;
+  border-radius: 28rpx;
 }
-.search-btn{
-  flex: 1;
-  background-color: #fff;
+.in_search {
+  height: 55rpx;
+  line-height: 55rpx;
+  font-size: 28rpx;
+  text-align: center;
+}
+.search_icon {
+  position: absolute;
+  top: 12rpx;
+  left: 270rpx;
 }

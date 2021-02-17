@@ -1,7 +1,7 @@
 <!--components/search/search.wxml-->
 <view class="search-view">
-    <input placeholder="请输入搜索内容" class="search-input" maxlength="30" confirm-type="搜索" bindinput='listenerSearchInput'>
-    </input>
-    <button class='search-btn' bindtap="toSearch">搜索</button>
-
+    <view class="search-box">
+        <icon class='search_icon' type='search' size='15'></icon>
+        <input class='in_search' type='text' disabled="true" placeholder='搜索商品' bindtap="toSearch"></input>  
+    </view>
 </view>
