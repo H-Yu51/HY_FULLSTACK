@@ -1,2 +1,14 @@
 <!--miniprogram/pages/cart/cart.wxml-->
-<text>miniprogram/pages/cart/cart.wxml</text>
+<view class='container'>
+  <!-- 空购物车 -->
+  <view wx:if="{{cart_have==''}}">
+    <view class='cart_empty'>
+      <view class="cart_img">
+        <image src="../../images/cartT.png" mode="widthFix"></image>
+      </view>
+      <view class="cart_text">购物车还是空的</view>
+      <button class="weui-btn" type="primary" style=' background-color: #ff6801;' bindtap='toLndex'>到小米商城逛逛</button>
+    </view>
+  </view>
+  <!-- end cart_empty -->
+</view>

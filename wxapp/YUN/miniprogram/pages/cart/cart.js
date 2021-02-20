@@ -1,12 +1,16 @@
 // miniprogram/pages/cart/cart.js
 Page({
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
-
-  },
+   /**
+    * 页面的初始数据
+    */
+   data: {
+    cart_have: [],
+    allSelected: false,
+    totalPrice: "0",
+    cat_selectDood_num: "0",
+    toPay: false
+ },
 
   /**
    * 生命周期函数--监听页面加载
