@@ -9,7 +9,14 @@ Page({
       'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/01d048d6ca5fea696b60c0431e24fbf3.jpg?thumb=1&w=1533&h=575&f=webp&q=90',
       'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c7f07012cae3bacba372aeca282d6a65.jpg?w=2452&h=920',
       'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0ef4160c861b998239bce9adb82341e7.jpg?thumb=1&w=1533&h=575&f=webp&q=90'
-    ]
+    ],
+    navdata:[
+      { url:'../../images/phone.png',word: '手机'},
+      { url: '../../images/tv.png', word: '电视'},
+      { url: '../../images/pc.png', word: '电脑'},
+      { url: '../../images/intelligent.png', word: '智能'},
+      { url: '../../images/news.png', word: '新品' }
+   ]
   },
 
   /**
