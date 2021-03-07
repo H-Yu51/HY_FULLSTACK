@@ -38,7 +38,21 @@ export default class Notes extends React.Component {
       })
   }
 
-
+  destroyEntity = (entity) => { // ? 箭头函数  this 
+    const _entities = this.state.entities.filter((_entity) => {
+      return _entity.$loki !== entity.$loki
+    })
+    // 页面上移除 
+    this.setState({
+      entities: _entities
+    })
+    
+    loadCollection('notes')
+      .then(collection => {
+        collection.remove(entity)
+        db.saveDatabase()
+      })
+  }
   
   render() {
     const entities = this.state.entities // 
@@ -46,6 +60,7 @@ export default class Notes extends React.Component {
     const noteItems = entities.map(entity => <Note 
       key={entities.$loki}
       entity={entity}
+      destroyEntity = {this.destroyEntity}
     />)
     return (
       <div className="ui container notes">
