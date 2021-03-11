@@ -1,0 +1,14 @@
+{
+  "name": "rest-api",
+  "version": "1.0.0",
+  "description": "前端和后端交流的接口\r   mongodb 存的数据是json  文档  \r   mysql  关系型  table \r - 网站中， 一切皆是资源 , 资源用URL访问  \r   http://localhost:3000/posts\r - HTTP 动词一起来构建 访问资源的语议\r   GET  http://localhost:3000/posts  所有的评论\r   http://localhost:3000/posts?id=1  传统URL \r   GET  http://localhost:3000/posts/:id   某一条评论 restful URL\r - 语意化的url, 语议化的HTML标签  header  footer main \r   url 有美学的， 设计的 \r - 谓语动词 GET POST  DELETE 改？  对资源的处理 \r   新增一条post ， 怎么设计URL \r   url http://localhost:3000/posts 资源 \r   新增一条资源  Restful 写的不是代码， 只是大自然的搬运工 \r   POST 动作语义， 新增一条资源\r   DELETE \r   修改用哪个语议动词? PUT ? PATCH?\r   PUT PATCH 的区别是？ \r   PUT 修改的意思 拿一个对象整个的替换掉， 替换\r   PATCH 拿新的对象和旧的对象比较， 做打补丁，",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "json-server db.json"
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
