@@ -1,9 +1,10 @@
 {
-  "pages": ["pages/cart/cart",
+  "pages": ["pages/category/category",
+    "pages/cart/cart",
     "pages/index/index",
-    "pages/user/user",
+    "pages/user/user"
     
-    "pages/category/category"
+    
   ],
   "window": {
     "backgroundColor": "#FF621F",
