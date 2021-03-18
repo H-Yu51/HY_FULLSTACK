@@ -1,28 +1,55 @@
-import React from 'react';
-import ReactDOM from "react-dom";
-import App from './App';
-// 复杂应用 都是细分的
-// 组件和数据是分离的
-// 给我们的组件提供状态管理
+import React, { useMemo, useState } from 'react';
+import ReactDOM from 'react-dom';
+// Hooks
 
-import { Provider } from 'mobx-react';
-import articlesStore from './stores/articlesStore';
-import { HashRouter } from 'react-router-dom';
-import usersStore from './stores/usersStore';
+function Child(props){
+    console.log('child 执行了');
+    return(
+        <div onClick={props.onClick}>
+            child:{props.data}
+        </div>
+    )
+}
+const Child2 = React.memo(Child);
 
 
-const stores = {
-  articlesStore: articlesStore,
-  usersStore:usersStore
+function App() {
+    const [n, setN] = useState(0);
+    const [m, setM] = useState(0);
+    const [k, setK] = useState(0);
+
+    const add = () => {
+        setN(i => i + 1)
+    }
+    const addChild = () => {
+        setM(i => i + 1)
+    }
+    // const onClickChild = () => {}
+    const onClickChild = useMemo(() =>{
+        
+            console.log(m);
+        
+    },[m])
+    return (
+        <div>
+            <div>
+                App
+            n:{n}
+            m:{m}
+            k:{k}
+                <button onClick={add}>n+1</button>
+                <button onClick={addChild}>m+1</button>
+            </div>
+            <Child2 data={m} onClick={onClickChild}/>
+        </div>
+
+    )
 }
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Provider {...stores}>
-      <HashRouter>
-        <App />
-      </HashRouter>
 
-    </Provider>
-  </React.StrictMode>, document.body
+
+
+ReactDOM.render(
+    <App />,
+    document.getElementById('root')
 )
