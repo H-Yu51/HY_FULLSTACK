@@ -36,3 +36,6 @@
 
 仓库只能有一个
 <Provider store={store}></Provider>
+
+
+- BlogPost  CommentList
