@@ -15,6 +15,7 @@ const merge  = (nums1,m,nums2,n) => {          //  箭头函数  es6
 
     let current2 = n-1;
     for(let i = nums1.length-1;i >= nums1.length-n;i--){
+        console.log(current2--);
         nums1[i]=nums2[current2--];
     }
     
