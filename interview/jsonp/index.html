@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="a.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        function callback(data){
+            console.log(data);
+        }
+    </script>
+    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/react/17.0.1/cjs/react.production.min.js"></script> -->
+    <script src="https://photo.sina.cn/aj/index?page=1&cate=recommend&callback=callback">
+    </script>
+    
+    <!-- <script>  // 同源限制
+    fetch('https://photo.sina.cn/aj/index?page=1&cate=recommend')
+        .then((data) => {
+            console.log(data);
+        })
+    </script> -->
+</body>
+
+</html>
