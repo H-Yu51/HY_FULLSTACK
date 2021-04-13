@@ -37,10 +37,21 @@
 // } 
 
 
-function flatten(arr) {  
-    return arr.reduce((result, item)=> {
-        return result.concat(Array.isArray(item) ? flatten(item) : item);
-    }, []);
+function flatten(arr) {
+    return arr.join(',').split(',').map(function(item) {
+        return parseInt(item);
+    })
 }
-let ary = [1, [2, [3, [4, 5]]], 6];
-console.log(flatten(ary)); // [ 1, 2, 3, 4, 5, 6 ]
+
+// function flatten(arr) {  
+//     return arr.reduce((result, item)=> {
+//         return result.concat(Array.isArray(item) ? flatten(item) : item);
+//     }, []);
+// }
+
+
+let ary = [1, [2, [3, [4, 5]]], 6,[]];
+// console.log(ary.flat(Infinity),'------');
+let arr = [[1,3],{a:1,b:1},{a:1,b:1}]
+console.log(flatten(ary),'ary'); // [ 1, 2, 3, 4, 5, 6 ]
+console.log(flatten(arr),'arr'); // [ 1, 2, 3, 4, 5, 6 ]
