@@ -42,43 +42,48 @@ class Promise {
         }
 
     }
-
     // 一个promise解决了后（完成状态转移，把控制权交出来）
-    then(onFullfilled, onRejected) {
-        if (this.state == 'pending') {
-            this.onResolvedCallbacks.push(() => {
-                onFullfilled(this.value)
-            })
-            this.onRejectedCallbacks.push(() => {
-                onRejected(this.value)
-            })
-        }
-        console.log('then');
-
-        // 状态为fulfilled  执行成功  传入成功后的回调  把执行权转移
-        if (this.state == 'fulfiiied') {
-            console.log('onfulfilled');
-            onFullfilled(this.value);
-        }
-        // 状态为rejected 执行失败  传入失败后的回调  把执行权转移
-        if (this.state == 'rejected') {
-            onRejected(this.reason)
-        }
+    then(onFulfilled, onRejected) {
+        let promise2 = new Promise((resolve, reject) => {
+            if (this.state == 'pending') {
+                this.onResolvedCallbacks.push(() => {
+                    onFulfilled(this.value)
+                })
+                this.onRejectedCallbacks.push(() => {
+                    onRejected(this.reason)
+                })
+            }
+            console.log('then');
+            // 状态为fulfilled  执行成功  传入成功后的回调  把执行权转移
+            if (this.state == 'fulfiiied') {
+                console.log('onfulfilled');
+                onFulfilled(this.value);
+            }
+            // 状态为rejected 执行失败  传入失败后的回调  把执行权转移
+            if (this.state == 'rejected') {
+                onRejected(this.reason)
+            }
+        })
+        return promise2
     }
 }
 
 
-new Promise((resolve, reject) => {
-    // 封装一个时间较多的任务 实现异步变同步
+let p1 = new Promise((resolve, reject) => {
 
-    setTimeout(() => {
-        // console.log(0);
-        resolve(10)   // 把状态改为 fulfiiled  然后 把value改为10
-        // reject('脑子瓦特了')
+    console.log(0);
+    setTimeout(() => {   
+        // reject('我不爱你了')
+        console.log('setTimeout');   
+        resolve(10)
         // 可能有错误
-        // throw new Error('出错了')
-
+        // throw new Error('是你的错')      
     }, 1000)
 }).then((data) => {
     console.log(data, '++++++++++');
 })
+// 0
+// then
+// rejected 状态被执行
+// 我不爱你了 ++++++++++
+// setTimeout

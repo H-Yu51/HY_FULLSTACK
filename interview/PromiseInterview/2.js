@@ -20,6 +20,7 @@ class Promise {
             }              
         }
         let reject = (reason) => {
+            console.log(reason);
             if (this.state === 'pending'){
                 console.log('rejected 状态被执行');
                 this.reason = reason
@@ -38,15 +39,14 @@ class Promise {
 }
 
 
-new Promise((resolve, reject) => {
-    // 封装一个时间较多的任务 实现异步变同步
+let p1 = new Promise((resolve, reject) => {
 
-    setTimeout(() => {
-        console.log(0);
+    console.log(0);
+    setTimeout(() => {      
         resolve(10)
-        reject('脑子瓦特了')
+        // reject('我不爱你了')
+        console.log('setTimeout');
         // 可能有错误
-        // throw new Error('出错了')
-        
+        // throw new Error('是你的错')      
     }, 1000)
 })
